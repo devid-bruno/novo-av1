@@ -16,10 +16,10 @@ def create_app():
 
     from app.controllers.professoresController import prof_bp
     from app.controllers.alunoController import aluno_bp
-    from app.controllers.homeController import home_bp
+    from app.controllers.authController import auth_bp
 
     app.register_blueprint(prof_bp, url_prefix='/professores/')
     app.register_blueprint(aluno_bp, url_prefix='/aluno/')
-    app.register_blueprint(home_bp, url_prefix='/')
+    app.register_blueprint(auth_bp, url_prefix='/')
 
     return app

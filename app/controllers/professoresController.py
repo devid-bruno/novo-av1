@@ -4,11 +4,14 @@ from app.models.professor import Professor
 import mysql.connector
 from app.config import DATABASE_CONFIG
 from app import db
+from flask import g
+from app.controllers.authController import login_required
 
 conn = mysql.connector.connect(**DATABASE_CONFIG)
 prof_bp = Blueprint('professores', __name__)
 
-@prof_bp.route('/entrar')
+@prof_bp.route('/index')
+@login_required
 def index():
     professores = Professor.query.all()
     return render_template('professores/index.html', professores=professores)
