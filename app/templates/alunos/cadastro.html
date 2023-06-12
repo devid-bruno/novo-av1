@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST" id="alunoForm">
+  {{ form.csrf_token }}
+  <div class="form-group">
+    <label for="cpf">{{ form.cpf.label }}</label>
+    {{ form.cpf(class="form-control", id="cpf") }}
+  </div>
+
+  <div class="form-group">
+    <label for="data_nascimento">{{ form.data_nascimento.label }}</label>
+    {{ form.data_nascimento(class="form-control", id="data_nascimento") }}
+  </div>
+
+  <div class="form-group">
+    <label for="sexo">{{ form.sexo.label }}</label>
+    {{ form.sexo(class="form-control", id="sexo") }}
+  </div>
+
+  <div class="form-group">
+    <label for="idade">{{ form.idade.label }}</label>
+    {{ form.idade(class="form-control", id="idade") }}
+  </div>
+
+  <div class="form-group">
+    <label for="av1">{{ form.av1.label }}</label>
+    {{ form.av1(class="form-control", id="av1") }}
+  </div>
+
+  <div class="form-group">
+    <label for="av2">{{ form.av2.label }}</label>
+    {{ form.av2(class="form-control", id="av2") }}
+  </div>
+
+  <div class="form-group">
+    <label for="media">{{ form.media.label }}</label>
+    {{ form.media(class="form-control", id="media", readonly="readonly") }} 
+  </div>
+  
+
+  {{ form.submit(class="btn btn-primary") }}
+</form>
+{% endblock %}

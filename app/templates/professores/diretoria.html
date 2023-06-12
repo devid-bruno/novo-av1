@@ -1,0 +1,12 @@
+
+{% block content %}
+  <h1>Cadastrar Professor</h1>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.csrf_token }}
+    {{ form.nome.label }} {{ form.nome() }}
+    {{ form.senha.label }} {{ form.senha() }}
+    {{ form.materia.label }} {{ form.materia() }}
+    {{ form.submit() }}
+  </form>
+{% endblock %}
